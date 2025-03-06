@@ -30,9 +30,9 @@ class FormationsController extends AbstractController
     private $categorieRepository;
     
     /**
-     * Chemin vers la vue formation
+     * Chemin vers la vue formations
      */
-    private const CHEMIN_VUE_FORMATION = "pages/formations.html.twig";
+    private const CHEMIN_VUE_FORMATIONS = "pages/formations.html.twig";
     
     public function __construct(FormationRepository $formationRepository, CategorieRepository $categorieRepository)
     {
@@ -45,7 +45,7 @@ class FormationsController extends AbstractController
     {
         $formations = $this->formationRepository->findAll();
         $categories = $this->categorieRepository->findAll();
-        return $this->render(self::CHEMIN_VUE_FORMATION, [
+        return $this->render(self::CHEMIN_VUE_FORMATIONS, [
             'formations' => $formations,
             'categories' => $categories
         ]);
@@ -56,7 +56,7 @@ class FormationsController extends AbstractController
     {
         $formations = $this->formationRepository->findAllOrderBy($champ, $ordre, $table);
         $categories = $this->categorieRepository->findAll();
-        return $this->render(self::CHEMIN_VUE_FORMATION, [
+        return $this->render(self::CHEMIN_VUE_FORMATIONS, [
             'formations' => $formations,
             'categories' => $categories
         ]);
@@ -68,7 +68,7 @@ class FormationsController extends AbstractController
         $valeur = $request->get("recherche");
         $formations = $this->formationRepository->findByContainValue($champ, $valeur, $table);
         $categories = $this->categorieRepository->findAll();
-        return $this->render(self::CHEMIN_VUE_FORMATION, [
+        return $this->render(self::CHEMIN_VUE_FORMATIONS, [
             'formations' => $formations,
             'categories' => $categories,
             'valeur' => $valeur,

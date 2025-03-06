@@ -38,9 +38,9 @@ class AdminFormationsController extends AbstractController {
     private $categorieRepository;
     
     /**
-    * Chemin vers la vue admin formation
+    * Chemin vers la vue admin formations
     */
-    private const CHEMIN_VUE_ADMIN_FORMATION = "admin/admin.formations.html.twig";
+    private const CHEMIN_VUE_ADMIN_FORMATIONS = "admin/admin.formations.html.twig";
     
     public function __construct(FormationRepository $formationRepository, CategorieRepository $categorieRepository)
     {
@@ -53,7 +53,7 @@ class AdminFormationsController extends AbstractController {
     {
         $formations = $this->formationRepository->findAll();
         $categories = $this->categorieRepository->findAll();
-        return $this->render(self::CHEMIN_VUE_ADMIN_FORMATION, [
+        return $this->render(self::CHEMIN_VUE_ADMIN_FORMATIONS, [
             'formations' => $formations,
             'categories' => $categories
         ]);
@@ -65,7 +65,7 @@ class AdminFormationsController extends AbstractController {
     {
         $formations = $this->formationRepository->findAllOrderBy($champ, $ordre, $table);
         $categories = $this->categorieRepository->findAll();
-        return $this->render(self::CHEMIN_VUE_ADMIN_FORMATION, [
+        return $this->render(self::CHEMIN_VUE_ADMIN_FORMATIONS, [
             'formations' => $formations,
             'categories' => $categories
         ]);
@@ -77,7 +77,7 @@ class AdminFormationsController extends AbstractController {
         $valeur = $request->get("recherche");
         $formations = $this->formationRepository->findByContainValue($champ, $valeur, $table);
         $categories = $this->categorieRepository->findAll();
-        return $this->render(self::CHEMIN_VUE_ADMIN_FORMATION, [
+        return $this->render(self::CHEMIN_VUE_ADMIN_FORMATIONS, [
             'formations' => $formations,
             'categories' => $categories,
             'valeur' => $valeur,
