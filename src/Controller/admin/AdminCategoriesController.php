@@ -35,6 +35,10 @@ class AdminCategoriesController extends AbstractController {
         $this->repository = $repository;
     }
     
+    /**
+     * 
+     * @return Response
+     */
     #[Route('/admin/categories', name: 'admin.categories')]
     public function index(): Response {
         $categories = $this->repository->findAll();
@@ -43,6 +47,11 @@ class AdminCategoriesController extends AbstractController {
         ]);
     }
         
+    /**
+     * 
+     * @param int $id
+     * @return Response
+     */
     #[Route('/admin/categorie/suppr/{id}', name: 'admin.categorie.suppr')]
     public function suppr(int $id): Response {
         $categorie = $this->repository->find($id);
@@ -54,7 +63,11 @@ class AdminCategoriesController extends AbstractController {
         return $this->redirectToRoute('admin.categories');
     }
     
-            
+    /**
+     * 
+     * @param Request $request
+     * @return Response
+     */     
     #[Route('/admin/categorie/ajout', name: 'admin.categorie.ajout')]
     public function ajout(Request $request): Response {
         $nomCategorie = $request->get("nom");

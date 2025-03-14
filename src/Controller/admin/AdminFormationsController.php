@@ -48,6 +48,10 @@ class AdminFormationsController extends AbstractController {
         $this->categorieRepository= $categorieRepository;
     }
     
+    /**
+     * 
+     * @return Response
+     */
     #[Route('/admin', name: 'admin.formations')]
     public function index(): Response
     {
@@ -59,7 +63,13 @@ class AdminFormationsController extends AbstractController {
         ]);
     }
     
-    
+    /**
+     * 
+     * @param type $champ
+     * @param type $ordre
+     * @param type $table
+     * @return Response
+     */
     #[Route('/admin/formations/tri/{champ}/{ordre}/{table}', name: 'admin.formations.sort')]
     public function sort($champ, $ordre, $table=""): Response
     {
@@ -71,6 +81,13 @@ class AdminFormationsController extends AbstractController {
         ]);
     }
     
+    /**
+     * 
+     * @param type $champ
+     * @param Request $request
+     * @param type $table
+     * @return Response
+     */
     #[Route('/admin/formations/recherche/{champ}/{table}', name: 'admin.formations.findallcontain')]
     public function findAllContain($champ, Request $request, $table=""): Response
     {
@@ -85,6 +102,11 @@ class AdminFormationsController extends AbstractController {
         ]);
     }
     
+    /**
+     * 
+     * @param int $id
+     * @return Response
+     */
     #[Route('/admin/suppr/{id}', name: 'admin.formation.suppr')]
     public function suppr(int $id): Response
     {
@@ -93,6 +115,12 @@ class AdminFormationsController extends AbstractController {
         return $this->redirectToRoute('admin.formations');
     }
     
+    /**
+     * 
+     * @param int $id
+     * @param Request $request
+     * @return Response
+     */
     #[Route('/admin/edit/{id}', name: 'admin.formation.edit')]
     public function edit(int $id, Request $request): Response
     {
@@ -112,6 +140,11 @@ class AdminFormationsController extends AbstractController {
         ]);
     }
     
+    /**
+     * 
+     * @param Request $request
+     * @return Response
+     */
     #[Route('/admin/ajout', name: 'admin.formation.ajout')]
     public function ajout(Request $request): Response
     {

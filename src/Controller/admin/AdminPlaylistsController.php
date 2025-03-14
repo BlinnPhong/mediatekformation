@@ -58,6 +58,10 @@ class AdminPlaylistsController extends AbstractController {
         $this->formationRepository = $formationRespository;
     }
     
+    /**
+     * 
+     * @return Response
+     */
     #[Route('/admin/playlists', name: 'admin.playlists')]
     public function index(): Response
     {
@@ -69,6 +73,12 @@ class AdminPlaylistsController extends AbstractController {
         ]);
     }
     
+    /**
+     * 
+     * @param type $champ
+     * @param type $ordre
+     * @return Response
+     */
     #[Route('/admin/playlists/tri/{champ}/{ordre}', name: 'admin.playlists.sort')]
     public function sort($champ, $ordre) : Response
     {
@@ -87,6 +97,13 @@ class AdminPlaylistsController extends AbstractController {
         ]);
     }
     
+    /**
+     * 
+     * @param type $champ
+     * @param Request $request
+     * @param type $table
+     * @return Response
+     */
     #[Route('/admin/playlists/recherche/{champ}/{table}', name: 'admin.playlists.findallcontain')]
     public function findAllContain($champ, Request $request, $table="") : Response
     {
@@ -101,6 +118,11 @@ class AdminPlaylistsController extends AbstractController {
         ]);
     }
     
+    /**
+     * 
+     * @param int $id
+     * @return Response
+     */
     #[Route('/admin/playlist/suppr/{id}', name: 'admin.playlist.suppr')]
     public function suppr(int $id): Response
     {
@@ -113,6 +135,12 @@ class AdminPlaylistsController extends AbstractController {
         return $this->redirectToRoute('admin.playlists'); 
     }
     
+    /**
+     * 
+     * @param int $id
+     * @param Request $request
+     * @return Response
+     */
     #[Route('/admin/playlist/edit/{id}', name: 'admin.playlist.edit')]
     public function edit(int $id, Request $request): Response
     {
@@ -132,6 +160,11 @@ class AdminPlaylistsController extends AbstractController {
         ]);
     }
     
+    /**
+     * 
+     * @param Request $request
+     * @return Response
+     */
     #[Route('/admin/playlist/ajout', name: 'admin.playlist.ajout')]
     public function ajout(Request $request): Response
     {

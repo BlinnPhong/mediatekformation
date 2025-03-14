@@ -16,12 +16,22 @@ class PlaylistRepository extends ServiceEntityRepository
         parent::__construct($registry, Playlist::class);
     }
 
+    /**
+     * 
+     * @param Playlist $entity
+     * @return void
+     */
     public function add(Playlist $entity): void
     {
         $this->getEntityManager()->persist($entity);
         $this->getEntityManager()->flush();
     }
 
+    /**
+     * 
+     * @param Playlist $entity
+     * @return void
+     */
     public function remove(Playlist $entity): void
     {
         $this->getEntityManager()->remove($entity);
