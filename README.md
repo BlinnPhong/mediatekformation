@@ -34,9 +34,9 @@ Un bouton "Enregistrer" permet de soumettre les modifications et de les enregist
 ### Page 5 : gestion des playlists
 Cette page présente les playlists et permet d'ajouter/éditer/supprimer une formation.<br>
 La partie centrale contient un tableau composé de 3 colonnes :<br>
-•	La 1ère colonne ("playlist") contient le nom de chaque playlist.
-•	La 2ème colonne ("catégories") contient la ou les catégories concernées par chaque playlist (langage…).
-•	La 3ème contient un bouton pour accéder à la page de présentation de la playlist.
+•	La 1ère colonne ("playlist") contient le nom de chaque playlist.<br>
+•	La 2ème colonne ("catégories") contient la ou les catégories concernées par chaque playlist (langage…).<br>
+•	La 3ème contient un bouton pour accéder à la page de présentation de la playlist.<br>
 Au niveau de la colonne "playlist", 2 boutons permettent de trier les lignes en ordre croissant ("<") ou décroissant (">"). Il est aussi possible de filtrer les lignes en tapant un texte : seuls les lignes qui contiennent ce texte sont affichées. Si la zone est vide, le fait de cliquer sur "filtrer" permet de retrouver la liste complète.<br>
 Au niveau de la catégorie, la sélection d'une catégorie dans le combo permet d'afficher uniquement les playlists qui ont cette catégorie. Le fait de sélectionner la ligne vide du combo permet d'afficher à nouveau toutes les playlists.
 Par défaut la liste est triée sur le nom de la playlist.<br>
@@ -63,3 +63,6 @@ Cette page présente les catégories et permet d'ajouter/supprimer une catégori
 - Dans phpMyAdmin, se connecter à MySQL en root sans mot de passe et créer la BDD 'mediatekformation'.<br>
 - Récupérer le fichier mediatekformation.sql en racine du projet et l'utiliser pour remplir la BDD (si vous voulez mettre un login/pwd d'accès, il faut créer un utilisateur, lui donner les droits sur la BDD et il faut le préciser dans le fichier ".env" en racine du projet).<br>
 - De préférence, ouvrir l'application dans un IDE professionnel. L'adresse pour la lancer est : http://localhost/mediatekformation/public/index.php<br>
+
+## Test de l'application en ligne
+Afin de tester l'application en ligne, rendez-vous sur cette adresse : http://mediatekformationbis.kesug.com/
