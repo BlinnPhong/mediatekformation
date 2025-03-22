@@ -4,7 +4,7 @@ Ce site, développé avec Symfony 6.4, permet d'accéder aux vidéos d'auto-form
 Ce site est une version amélioré de ce dépot d'origine https://github.com/CNED-SLAM/mediatekformation ou seule la partie front office a été développée. Voici les nouvelles fonctionnalités (back office) ajoutées :<br>
 ![use_case_diagram_4](https://github.com/user-attachments/assets/0d57c507-4c45-4bca-9721-e98ba3b9bcbc)
 ## Les différentes pages
-Voici les 8 nouvelles pages nouvelles correspondant aux différents cas d’utilisation.
+Voici les 8 nouvelles pages correspondant aux différents cas d’utilisation.
 ### Page 1 : l'authentification
 Cette page permet de s'authentifier pour accéder à la partie back office du stie.<br>
 ![image](https://github.com/user-attachments/assets/9220a572-55f2-4d94-ad4f-35ab9199fc40)
